@@ -1,5 +1,6 @@
 (ns backend.database.setup
-  (:require [datomic.client.api :as d]))
+  (:require [datomic.client.api :as d])
+  (:require [backend.database.schemas.core :refer [schemas]]))
 
 ;; Remember to start a peer server with
 ;; the command
@@ -22,3 +23,6 @@
 
 ;; Create a connection with the client
 (def conn (d/connect client {:db-name "clojure_fullstack"}))
+
+;; Transact schemas
+(d/transact conn {:tx-data schemas})
