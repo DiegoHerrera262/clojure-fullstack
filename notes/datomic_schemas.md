@@ -61,7 +61,9 @@ exception.
 > The suggestion for using uuids as unique identifiers is to define them
 > as an attribute with the type `:db.type/uuid`.
 
-Personally, I would prefer to use entity ids for everything!
+Personally, I would prefer to use entity ids for everything! Why?
+Because look-up refs cannot be used in queries. The workaround is
+to use pulls, as I will show shortly.
 
 ### Transacting attributes
 
